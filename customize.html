@@ -152,14 +152,14 @@
   <script>
     const DEFAULT_DATA = {
       site: { title: "Vignesh | CV", favicon: "assets/icons/favicon.svg" },
-      navigation: { logo: "Vignesh seetharaman" },
+      navigation: { logo: "Vignesh Seetharaman" },
       hero: {
         enabled: true,
         greeting: "Hello, I'm",
         name: "Vignesh Seetharaman",
         title: "Aspiring Supply chain & Operations Analyst",
         description: "Supply chain enthusiast turning data into smarter decisions and efficient operations. Building expertise across analytics, business intelligence, and supply chain technology.",
-        profileImage: "src/assets/images/herop.png",
+        profileImage: "assets/images/herop.png",
         btn1Text: "Download CV",
         btn1Url: "assets/documents/resume-example.txt",
         btn2Text: "Contact Info",
@@ -171,11 +171,11 @@
         enabled: true,
         eyebrow: "Get To Know More",
         title: "About Me",
-        profileImage: "src/assets/images/hero.png",
+        profileImage: "assets/images/hero.png",
         description: "I’m an aspiring supply chain analytics professional with a strong interest in data, business intelligence, and operational optimization. I use Python, SQL, Excel, and Power BI to turn data into insights that support better supply chain decisions.",
         cards: [
           { title: "Experience", subtitle: "2 years", detail: "Omega Healthcare Management Services", icon: "assets/icons/experience.svg" },
-          { title: "Education", subtitle: "Bcomm. Logistics & Supply chain Management 2018 - 2021", detail: "CURTIN CUNIVERSITY", icon: "assets/icons/education.svg" }
+          { title: "Education", subtitle: "Bcomm. Logistics & Supply chain Management 2018 - 2021", detail: "CURTIN UNIVERSITY", icon: "assets/icons/education.svg" }
         ]
       },
       experience: {
@@ -184,18 +184,11 @@
         title: "Experience",
         items: [
           {
-            role: "Frontend Engineer",
-            company: "TechNova Solutions",
-            period: "2023 - Present",
-            description: "Architected enterprise client-facing dashboards and design systems. Reduced initial page bundle sizes by 35%.",
-            skills: "JavaScript, HTML/CSS, React, Design Systems"
-          },
-          {
-            role: "Full Stack Intern",
-            company: "CloudCore Labs",
-            period: "2022 - 2023",
-            description: "Implemented high-throughput REST APIs and integrated PostgreSQL analytics database with automated test suites.",
-            skills: "Node.js, Express, PostgreSQL, REST APIs"
+            role: "Accounts Receivable Executive",
+            company: "Omega Healthcare Management Services, Bengaluru",
+            period: "2016 - 2018",
+            description: "Managed FQHC/FFS accounts, resolving outstanding issues through accurate review and structured follow-up. Handled high-volume workflows, special projects, and supported new team members with process guidance.",
+            skills: "Excel, MS Office, Account Reconciliation, Workflow Optimization"
           }
         ]
       },
@@ -205,21 +198,23 @@
         title: "Skills",
         categories: [
           {
-            title: "Frontend Development",
+            title: "Analytics & Data Tools",
             skills: [
-              { name: "HTML & CSS", level: "Experienced" },
-              { name: "JavaScript", level: "Experienced" },
-              { name: "TypeScript", level: "Intermediate" },
-              { name: "Tailwind CSS", level: "Intermediate" }
+              { name: "Python", level: "Intermediate" },
+              { name: "SQL", level: "Intermediate" },
+              { name: "Microsoft Excel", level: "Experienced" },
+              { name: "Power BI", level: "Intermediate" },
+              { name: "Tableau", level: "Intermediate" }
             ]
           },
           {
-            title: "Backend Development",
+            title: "Supply Chain & Operations",
             skills: [
-              { name: "Node.js", level: "Experienced" },
-              { name: "Express.js", level: "Intermediate" },
-              { name: "PostgreSQL", level: "Intermediate" },
-              { name: "Git & GitHub", level: "Experienced" }
+              { name: "Logistics Management", level: "Experienced" },
+              { name: "Inventory Optimization", level: "Intermediate" },
+              { name: "Process Improvement", level: "Experienced" },
+              { name: "Account Reconciliation", level: "Experienced" },
+              { name: "Workflow Planning", level: "Experienced" }
             ]
           }
         ]
@@ -748,6 +743,9 @@
         border-radius: 1rem;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         border: 1px solid rgba(0, 0, 0, 0.08);
+        list-style: none;
+        margin: 0;
+        padding: 0;
       }
 
       .menu-links.open {
@@ -1034,31 +1032,30 @@
       .arrow {
         position: absolute;
         bottom: clamp(1rem, 3vh, 2rem);
-        left: 0;
-        right: 0;
-        margin-inline: auto;
-        margin-left: auto;
-        margin-right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
         cursor: pointer;
         height: clamp(1.6rem, 2.5vw, 2rem);
         width: clamp(1.6rem, 2.5vw, 2rem);
+        display: block;
         opacity: 0.6;
-        transition: all 300ms ease;
+        transition: opacity 300ms ease, transform 300ms ease;
         z-index: 20;
       }
 
       .arrow:hover {
         opacity: 1;
-        transform: translateY(4px);
+        transform: translateX(-50%) translateY(4px);
       }
 
       .arrow-up {
-        transform: rotate(180deg);
+        transform: translateX(-50%) rotate(180deg);
       }
 
       .arrow-up:hover {
         opacity: 1;
-        transform: rotate(180deg) translateY(4px);
+        transform: translateX(-50%) rotate(180deg) translateY(-4px);
       }
 
       /* 6. Experience & Timeline */
@@ -1420,7 +1417,7 @@
           <div class="hamburger-icon" onclick="toggleMenu()" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
           </div>
-          <div class="menu-links">${navLiMobile}</div>
+          <ul class="menu-links">${navLiMobile}</ul>
         </div>
       </nav>
     </header>
